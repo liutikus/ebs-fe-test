@@ -1,11 +1,10 @@
-import { useCart } from "../hooks/useCart"
+
 import { Product } from "../types/types"
 import Card from "./Card"
 
 const ProductsList = ({products, filter, sort}: {products:Product[], filter:string, sort:'asc'|'desc'}) => {
 
-const {items}=useCart()
-console.log(items)
+
    const  filtredProducts = filter? products.filter(product => product.category === filter) : products
    filtredProducts.sort((a,b)=> sort === 'asc' ? a.price-b.price : b.price- a.price)
   return (
