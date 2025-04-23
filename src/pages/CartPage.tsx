@@ -1,8 +1,9 @@
+import CartList from "../components/CartList"
 
 const CartPage = () => {
   return (
-    <div>
-      
+    <div className="m-4">
+      <CartList/>
     </div>
   )
 }

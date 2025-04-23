@@ -8,6 +8,7 @@ interface CartItem extends Product {
 interface CartContextType {
     items: CartItem[],
     addToCart: (product:Product) => void,
+    decreaseQuantity: (id: number) => void
     removeFromCart: (id: number) => void,
     clearCart: () =>void
 }
@@ -38,10 +39,20 @@ const CartProvider = ({children} : {children: ReactNode}) => {
         setItems(prevItems =>prevItems.filter(item => item.id!== id ) )
     }
 
+    const decreaseQuantity = (id: number)=>{
+        setItems(prevItems =>
+            prevItems.map(item =>
+              item.id === id
+                ? { ...item, quantity: item.quantity > 1 ? item.quantity - 1 : 1 }
+                : item
+            )
+          );
+    }
+
     const clearCart = () => setItems([])
 
   return (
-    <CartContext.Provider value={{items, addToCart, removeFromCart, clearCart }}>
+    <CartContext.Provider value={{items, addToCart, removeFromCart, clearCart, decreaseQuantity }}>
       {children}
     </CartContext.Provider>
   )
