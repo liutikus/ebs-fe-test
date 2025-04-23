@@ -1,12 +1,16 @@
+import CartProvider from "./context/CartContext"
 import MainLayout from "./layout/MainLayout"
+import HomePage from "./pages/HomePage"
 
 
 function App() {
 
   return (
-   <MainLayout>
-
-   </MainLayout>
+  <CartProvider>
+    <MainLayout>
+      <HomePage/>
+    </MainLayout>
+  </CartProvider>
   )
 }
 
