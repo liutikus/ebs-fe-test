@@ -1,8 +1,9 @@
+import Nav from "../components/Nav"
 
 const MainLayout = () => {
   return (
     <div>
-      
+      <Nav/>
     </div>
   )
 }
