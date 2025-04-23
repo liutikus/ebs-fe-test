@@ -2,6 +2,7 @@ import { useCart } from "../hooks/useCart"
 import { Product } from "../types/types"
 import { formatPrice } from "../utils/formatPrice"
 import Button from "./Button"
+import StarRating from "./StarRating"
 
 const Card = ({product}: {product: Product}) => {
 
@@ -13,6 +14,10 @@ const Card = ({product}: {product: Product}) => {
       <img className="object-contain h-40" src={product.image} alt={product.title} />
       <p className=" font-semibold text-[#362166]">{product.title}</p>
       <p className="text-sm text-[#636B61] capitalize">{product.category}</p>
+      <div className="flex">
+      <StarRating rating={product.rating.rate}/>
+        <p className="text-sm text-[#636B61] mx-2">({product.rating.count})</p>
+      </div>
       <p className="text-lg font-bold ">{formatPrice(product.price)} </p>
       <div className="mt-2">
             <Button
