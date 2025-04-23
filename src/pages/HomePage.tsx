@@ -21,7 +21,7 @@ const HomePage = () => {
     .finally(()=> setLoading(false))
   },[])
 
-  console.log(filter, sort)
+
 
   if(loading) return <Loading/>
   if(error) return <ErrorMes message={error}/>
@@ -34,7 +34,7 @@ const HomePage = () => {
   <select
     value={filter}
     onChange={e => setFilter(e.target.value)}
-    className="px-4 py-2 rounded-md border cursor-pointer border-[#ECE5F0] capitalize text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#362166] focus:border-[#362166]"
+    className="px-4 py-2 shadow rounded-md border cursor-pointer border-[#ECE5F0] capitalize text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#362166] focus:border-[#362166]"
   >
     <option value="">All</option>
     {categories.map(c => (
@@ -45,7 +45,7 @@ const HomePage = () => {
   <select
     value={sort}
     onChange={e => setSort(e.target.value as any)}
-    className="px-4 py-2 rounded-md border border-[#ECE5F0] cursor-pointer text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#362166] focus:border-[#362166]"
+    className="px-4 py-2 shadow rounded-md border border-[#ECE5F0] cursor-pointer text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#362166] focus:border-[#362166]"
   >
     <option value="asc">Price: Low to High</option>
     <option value="desc">Price: High to Low</option>
