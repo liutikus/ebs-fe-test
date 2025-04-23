@@ -10,6 +10,7 @@ const HomePage = () => {
   const [products, setProducts]= useState<Product[]>([])
   const [filter, setFilter] = useState('');
   const [sort, setSort] = useState<'asc'|'desc'>('asc');
+  const [inputValue, setInputValue] = useState('')
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
@@ -22,6 +23,9 @@ const HomePage = () => {
   },[])
 
 
+  const filteredProducts = products.filter(product =>
+    product.title.toLowerCase().includes(inputValue.toLowerCase())
+  );
 
   if(loading) return <Loading/>
   if(error) return <ErrorMes message={error}/>
@@ -30,6 +34,14 @@ const HomePage = () => {
 
   return (
     <div className="m-10">
+      <div className="my-2">
+
+      <input type="text" placeholder="Search... "
+      value={inputValue}
+      onChange={e=>setInputValue(e.target.value)}
+      className="shadow-sm rounded-md p-1 focus:outline-none"
+      />
+      </div>
   <div className="flex gap-4 mb-4">
   <select
     value={filter}
@@ -53,7 +65,7 @@ const HomePage = () => {
   </select>
 </div>
       
-      <ProductsList products={products} filter={filter} sort={sort}/>
+      <ProductsList products={filteredProducts} filter={filter} sort={sort}/>
     </div>
   )
 }
