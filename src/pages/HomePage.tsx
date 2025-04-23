@@ -21,7 +21,7 @@ const HomePage = () => {
     .finally(()=> setLoading(false))
   },[])
 
-  console.log(products)
+  console.log(filter, sort)
 
   if(loading) return <Loading/>
   if(error) return <ErrorMes message={error}/>
@@ -49,10 +49,11 @@ const HomePage = () => {
   >
     <option value="asc">Price: Low to High</option>
     <option value="desc">Price: High to Low</option>
+
   </select>
 </div>
       
-      <ProductsList products={products}/>
+      <ProductsList products={products} filter={filter} sort={sort}/>
     </div>
   )
 }
