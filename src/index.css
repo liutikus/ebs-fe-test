@@ -2,4 +2,6 @@
 
 body{
   font-family: 'Red Hat Mono', sans-serif;
+  background-color: #fafafa;
+  overflow-x: hidden;
 }
