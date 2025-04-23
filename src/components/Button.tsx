@@ -1,8 +1,10 @@
 
-const Button = ({label} : {label:string}) => {
+const Button = ({label, handleClick} : {label:string, handleClick: ()=> void}) => {
   return (
     <div>
-      <button className='border-1 px-2 font-bold text-lg border-[#362166] text-[#362166] rounded-md cursor-pointer 
+      <button
+      onClick={handleClick}
+      className='border-1 px-2 font-bold text-lg border-[#362166] text-[#362166] rounded-md cursor-pointer 
       hover:bg-[#362166]
         hover:text-[#ECE5F0]
       '>
