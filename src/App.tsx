@@ -13,7 +13,7 @@ function App() {
       <MainLayout>
       <Routes>
             <Route path="/ebs-fe-test/" element={<HomePage />} />
-            <Route path="ebs-fe-test//cart" element={<CartPage />} />
+            <Route path="ebs-fe-test/cart" element={<CartPage />} />
           </Routes>
       </MainLayout>
     
