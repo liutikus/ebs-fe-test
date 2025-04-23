@@ -3,10 +3,13 @@ import { Product } from "../types/types"
 import { fetchProduct } from "../services/productServices"
 import Loading from "../components/Loading"
 import ErrorMes from "../components/ErrorMes"
+import ProductsList from "../components/ProductsList"
 
 const HomePage = () => {
 
   const [products, setProducts]= useState<Product[]>([])
+  const [filter, setFilter] = useState('');
+  const [sort, setSort] = useState<'asc'|'desc'>('asc');
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
@@ -23,10 +26,13 @@ const HomePage = () => {
   if(loading) return <Loading/>
   if(error) return <ErrorMes message={error}/>
 
-  
+  const categories = Array.from(new Set(products.map(p => p.category)));
+
   return (
-    <div>
+    <div className="m-10">
+  
       
+      <ProductsList products={products}/>
     </div>
   )
 }

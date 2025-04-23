@@ -1,4 +1,3 @@
-import React from 'react'
 
 const ErrorMes = ({message} : {message: string | null}) => {
   return (
