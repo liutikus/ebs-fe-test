@@ -12,8 +12,8 @@ function App() {
     <BrowserRouter>
       <MainLayout>
       <Routes>
-            <Route path="/ebs-fe-test/" element={<HomePage />} />
-            <Route path="ebs-fe-test/cart" element={<CartPage />} />
+            <Route path="/" element={<HomePage />} />
+            <Route path="/cart" element={<CartPage />} />
           </Routes>
       </MainLayout>
     
