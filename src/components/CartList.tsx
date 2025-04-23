@@ -22,16 +22,14 @@ const CartList = () => {
         {items.map(item=>(
             <div 
             key={item.id}
-            className="mt-5 flex shadow-sm ">
+            className="mt-5 flex justify-between md:mx-15 md:px-15  shadow-sm ">
 
-                <img src={item.image} alt={item.title} 
-                className="h-25"
-                />
+               
                 <div className="mx-2">
                 <p>{item.title}</p>
                 <p className="text-xl font-bold">{formatPrice(item.price)}</p>
-                <div className="flex">
-                <div className="mr-20 mb-5">
+                <div className="flex ">
+                <div className="mr-10 mb-5">
                     <button className="bg-[#362166] cursor-pointer text-xl w-7 text-[#ECE5F0] px-2 rounded-full
                     hover:bg-[#ECE5F0]
                     hover:text-[#362166]
@@ -51,15 +49,17 @@ const CartList = () => {
                       - 
                     </button>
                 </div>
-                <Button label='Remove From Cart' handleClick={()=> removeFromCart(item.id)}/>
+                <Button label='Remove' handleClick={()=> removeFromCart(item.id)}/>
                 </div>
                 </div>
-           
+                <img src={item.image} alt={item.title} 
+                className="sm:h-25 h-15"
+                />
           
             </div>
         ))}
     </div>
-        <div className="flex items-center justify-center mt-10 shadow-xl w-screen p-10">
+        <div className="flex shadow-xl mb-20 w-fit p-5">
        <TotalPrice/>
 
         </div>

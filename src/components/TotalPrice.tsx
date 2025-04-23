@@ -13,7 +13,7 @@ const totalPrice = items.reduce((sum, i) => sum + i.price * i.quantity, 0);
     <div >
         <h1 className='text-3xl font-bold text-[#362166] mb-5'>Summary</h1>
         {items.map(item=>(
-            <div key={item.id}>
+            <div key={item.id} className='border-b-1 border-[#362166]'>
                 <p>{item.title}</p>
                 <div className='flex'>
 
