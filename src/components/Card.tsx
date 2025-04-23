@@ -6,9 +6,8 @@ import StarRating from "./StarRating"
 
 const Card = ({product}: {product: Product}) => {
 
-    const {items, addToCart} = useCart()
+    const {addToCart, removeFromCart} = useCart()
 
-    console.log(items)
   return (
     <div className=" p-4 rounded-lg flex flex-col shadow hover:shadow-xl transition-shadow duration-300">
       <img className="object-contain h-40" src={product.image} alt={product.title} />
@@ -19,10 +18,14 @@ const Card = ({product}: {product: Product}) => {
         <p className="text-sm text-[#636B61] mx-2">({product.rating.count})</p>
       </div>
       <p className="text-lg font-bold ">{formatPrice(product.price)} </p>
-      <div className="mt-2">
+      <div className="mt-2 flex justify-between">
             <Button
             handleClick={()=>addToCart(product)}
              label='Add to Cart'
+             />
+              <Button
+            handleClick={()=>removeFromCart(product.id)}
+             label='Remove'
              />
       </div>
     </div>
