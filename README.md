@@ -43,3 +43,9 @@ This is a **Product Catalog Application** built with React.js and TypeScript.
 
 ---
 
+## Deployment
+
+ - This project is deployed using GitHub Pages.
+ - You can view it here: https://liutikus.github.io/ebs-fe-test/
+
+---
