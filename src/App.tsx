@@ -10,13 +10,12 @@ function App() {
   return (
   <CartProvider>
     <Router>
-      <MainLayout>
       <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/cart" element={<CartPage />} />
+          <Route path="/" element={<MainLayout />}>
+            <Route index element={<HomePage />} />
+            <Route path="cart" element={<CartPage />} />
+          </Route>
           </Routes>
-      </MainLayout>
-    
     </Router>
   </CartProvider>
   )

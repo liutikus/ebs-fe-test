@@ -1,18 +1,19 @@
-import { ReactNode } from "react"
-import Nav from "../components/Nav"
+import Nav from "../components/Nav";
+import { Outlet } from "react-router-dom";
 
-const MainLayout = ({children}: {children: ReactNode}) => {
+const MainLayout = () => {
   return (
     <div>
       <header>
-      <Nav/>
+        <Nav />
       </header>
+      <main>
+        <Outlet />
+      </main>
 
-      <main>{children}</main>
-      
       <footer></footer>
     </div>
-  )
-}
+  );
+};
 
-export default MainLayout
+export default MainLayout;
